@@ -1,6 +1,6 @@
 Name:           espeak
 Version:        1.40.02
-Release:        3.1%{?dist}
+Release:        4%{?dist}
 Summary:        Software speech synthesizer (text-to-speech)
 
 Group:          Applications/Multimedia
@@ -11,6 +11,7 @@ Source1:        espeak.1
 Patch0:         espeak-1.23-makefile_nostaticlibs.patch
 Patch1:         espeak-1.40.02-gcc_no_libstdc++.patch
 Patch2:         espeak-1.40.02-pulseaudio.patch
+Patch3:         espeak-1.40.02-vol-fix.patch
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  pulseaudio-libs-devel
@@ -44,6 +45,7 @@ Development files for eSpeak, a software speech synthesizer.
 %patch0 -p1 -b .nostaticlibs
 %patch1 -p1 -b .gcc_no_libstdc++
 %patch2 -p1 -b .pulseaudio
+%patch3 -p1 -b .vol-fix
 # Fix file permissions
 find . -type f -exec chmod 0644 {} ";"
 # Prepare documentation
@@ -100,6 +102,10 @@ rm -rf $RPM_BUILD_ROOT
 
 
 %changelog
+* Mon Feb 13 2012 Jaroslav Škarvada <jskarvad@redhat.com> - 1.40.02-4
+- Fixed volume settings (by vol-fix patch)
+  Resolves: rhbz#789997
+
 * Mon Nov 30 2009 Dennis Gregorovic <dgregor@redhat.com> - 1.40.02-3.1
 - Rebuilt for RHEL 6
 
