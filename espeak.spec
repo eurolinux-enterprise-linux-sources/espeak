@@ -9,7 +9,7 @@
 
 Name:           espeak
 Version:        1.47.11
-Release:        2%{?dist}
+Release:        4%{?dist}
 Summary:        Software speech synthesizer (text-to-speech)
 
 Group:          Applications/Multimedia
@@ -135,6 +135,12 @@ exit 0
 
 
 %changelog
+* Fri Jan 24 2014 Daniel Mach <dmach@redhat.com> - 1.47.11-4
+- Mass rebuild 2014-01-24
+
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 1.47.11-3
+- Mass rebuild 2013-12-27
+
 * Mon Jul 15 2013 Jaroslav Škarvada <jskarvad@redhat.com> - 1.47.11-2
 - Fixed manual page and built-in help to be up-to-date
 
